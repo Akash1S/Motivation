@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load staticfiles %}
+{% block links_data %}
+    <style>
+        #oo1 {
+            height: 300px;
+            width: 300px;
+            margin-bottom: 8px;
+            border-radius: 20px;
+        }
+        p {
+            font-family: 'EB Garamond', serif;
+            font-size: 20px;
+        }
+    </style>
+    <div class="container">
+        <br><br><br><br><br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <h4><b>Picture Gallery </b></h4>
+            </div>
+            <div class="col-md-7">
+
+                <a href="{% url 'pulak' %}">Pulak Lakhani</a><br>
+                <a href="{% url 'seminars_gallery' %}">Motivational Seminars</a><br>
+                <a href="{% url 'courses' %}" class=""> Course Details</a><br>
+                <a href="#" class="">About Listeners</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

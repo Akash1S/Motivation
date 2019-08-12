@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <title>Home page __ Pulak Lakhani</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        .change1 {
+            font-size: 30px;
+            padding: 30px;
+            margin: 5px;
+        }
+
+        .nav1 {
+            font-size: 20px;
+            padding: -80px;
+            color: white;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            background: #5bc0de;
+        }
+
+        .navbar .container .ul1 {
+            display: none;
+        }
+
+        .navbar .container .ul1:hover {
+            background: black;
+            border: black 10px solid;
+            border-radius: 20px;
+            color: white;
+            font-size: 20px;
+            display: inline;
+        }
+
+        .iconnav1 {
+            height: 20px;
+            width: 20px;
+            {#margin: 10px;#}
+        }
+
+        .iconnav1:hover {
+            height: 22px;
+            width: 22px;
+        }
+        .iconnav2:hover {
+            height: 52px;
+            width: 232px;
+        }
+        .iconnav2{
+                height: 50px;
+                margin: 15px;
+                width: 230px;
+        }
+        .nav2 {
+            {#padding: 50px;#}
+            background-image: url("https://images.unsplash.com/photo-1530982011887-3cc11cc85693?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+            background-size: cover;
+            {#height: 200px;#}
+            width: 1330px;
+        }
+
+        .shows {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 15px;
+            color: Black;
+            padding: 10px;
+
+        }
+
+        #welcome {
+            background: #5bc0de;
+            padding: 50px;
+
+        }
+
+        .row {
+        {#margin-left: 100px;#}
+        }
+
+        #oo1 {
+            height: 200px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-family: 'EB Garamond', serif;
+            font-size: 20px;
+        }
+
+        #big_image {
+            width: 1340px;
+            height: 500px;
+        }
+
+        .nav_links{
+            margin-right: 280px;
+        }
+        .btn-default{
+            background: #dddddd;
+            font-size: 20px;
+            padding: 3px;
+        }
+        #rights{
+            font-size: 20px;
+            color: #5e5e5e;
+            font-family: "Century";
+            padding-left: 100px;
+        }
+        #rights:hover{
+            color: #000;
+            text-decoration: none;
+        }
+        pre{
+            background: inherit;
+            border: none;
+        }
+        .contact-us{
+               font-size: medium;
+        }
+        .gallary{
+            height: 120px;
+            width: 130px;
+        }
+
+        pre {
+            font-size: 20px;
+            font-family: "Apple Chancery";
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar nav1 navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <ul class="nav navbar-nav">
+            <li style="margin-top: 17px"><b>9191919191&nbsp;|</b></li>
+            <li><a href="https://www.twitter.com"><img class="iconnav1" src={% static 'twitter.png' %}></a></li>
+            <li><a href="https://www.youtube.com"><img class="iconnav1" src={% static 'youtube_white_icon.png' %}></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if  type == "Confirmed" %}
+                <b>
+                    <li id="name"><a class="name" style="color: white"
+                                     href="/profile/?email={{ user.Email }}">{{ user.First_Name }}</a></li>
+                </b>
+            {% else %}
+                <li><a class="nav-item nav-link active change" style="color: white"
+                       href="{% url 'user_login_view' %}"><b>login</b></a></li>
+            {% endif %}
+        </ul>
+        <span class="navbar-toggler-icon"></span>
+        <br>
+    </div>
+</nav>
+{% block login_signup %}
+
+{% endblock %}
+<div id='welcome'>
+    <h1 align="center"> Welcome To Pulak Institute</h1>
+    <br>
+    <p align="center">Welcome to pulak Institute for personality development, The Place To Experience Fast learning And
+        Stable results</p>
+    <p align="center" style="font-size:24px"><b>Today's Preparation determines tomorrow's Achievement</b></p>
+</div>
+<br>
+<div>
+    <img id="big_image"
+         src="https://images.unsplash.com/photo-1544531585-f14f463149ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+</div><br>
+<div class="container">
+    <ul class="nav navbar-nav nav_links">
+        <li><a href="{% url 'pulak' %}" class="btn btn-default"><b>Pulak Lakhani</b></a></li>
+        <li><a href="{% url 'seminars_gallery' %}" class="btn btn-default"><b> Videos</b></a></li>
+        <li><a href="{% url 'courses' %}" class="btn btn-default"> <b>Course Details</b></a></li>
+        <li><a href="{% url 'about_us' %}" class=" btn btn-default"> <b>Contact US</b></a></li>
+    </ul>
+</div><br>
+{% block center_data %}
+
+{% endblock %}
+<div class="navbar nav2">
+    <div class="row">
+{#      <div class="container">#}
+        <div class="col-md-1"></div>
+          <div class="col-md-3">
+            <h3><b>Gallary</b></h3>
+              <img class="gallary"  src="{% static 'third.jpeg' %}">
+              <img class="gallary"  src="{% static 'third.jpeg' %}">
+              <img class="gallary"  src="{% static 'third.jpeg' %}">
+              <img class="gallary"  src="{% static 'third.jpeg' %}">
+        </div>
+        <div class="col-md-3">
+            <h3>Contact Us</h3>
+            <a href="https://www.facebook.com/"><img class="iconnav2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnw0a0SZkfx4vbFuv0C_sJJ2COoj4ZVWZ-zE7EaUYZ37QviF6i">
+        </a><br>
+        <a href="#"><img class="iconnav2" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkuRsC8UrQPp_NJFJfD3Tm9ygMKpRkuokFZxURDIl8UwHbgXSOiA'></a>
+        <a href="#"><img class="iconnav2" src='data:image/png;base64,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'></a>
+        </div>
+        <div class="col-md-4 contact-us">
+{#            <h3>Address</h3>#}
+{#            Flat No.-304,<br>#}
+{#            Durga Complex Near Prashant Hotel,<br>#}
+{#            Navlakhha, Indore,<br>#}
+{#            Madhaya Pradesh - 452010(India)#}
+{#            <br>#}
+{#            <span>E-mail:</span>        lakhani@gmail.com<br>#}
+{#            <span>Telephone:</span>     9191919191<br>#}
+{#            <span>Mobile :</span>       (+91)9191919191#}
+            <pre>
+                <span style="color: white; font-size: 20px">Lakhani Institute</span>
+                Sector FH- 304,
+                Durga Complex ,
+                navlakhha, Indore,
+                Madhya Pradesh - 452 010(India)
+
+                <b>Email:</b><span style="color: #337ab7;">hariibabu47@gmail.com
+                            pulak2019@gmail.com</span>
+                <b>MOB:</b> +91 - 9111990094
+                <b>MOB:</b> +91 - 9111990094
+</pre>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+<a class="nav navbar-nav" href="{% url 'home' %}" id="rights">all right Resereved &commat; lakhani Group</a>
+
+</body>
+</html>

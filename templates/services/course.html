@@ -1,0 +1,98 @@
+<title>Course Detail Page </title>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block center_data %}
+<style>
+    table {
+        font-size: 20px;
+        font-family: "Trebuchet MS", sans-serif;
+    }
+    td, th {
+        border: 2px solid black;
+        padding: 10px;
+    }
+    .jumb1{
+        background: #f8f8f8;
+    }
+    li{
+        list-style: circle;
+        padding: 10px;
+    }
+    #course_table{
+        font-family: "Times New Roman";
+        margin-left: 20px;
+        font-size: 20px;
+        background: #dddddd;
+        border-radius: 6px;
+    }
+    #course{
+        padding: 20px;
+        background: orangered;
+        border-radius: 6px;
+    }
+    #uls{
+        {#margin: 20px;#}
+    }
+</style><br><br><br>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="course_table">
+                <div id="course"><b>Course We Provides</b></div>
+                <ul id="types uls">
+                    <li>Self Awareness & Development</li>
+                    <li>Effective Communication</li>
+                    <li>Transactional Analysis</li>
+                    <li>Motivation, Leadership & Creativity</li>
+                    <li>Effective Inter Personal Relationship Dynamics</li>
+                    <li>Stress Management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="container">
+                <br><br>
+                <div class="jumb1">
+                    <p><span><u>Personality development </u></span> : is the relatively enduring pattern of the
+                        thoughts, feelings, and behaviours that distinguish individuals from one another.
+                        The dominant view in the field of personality psychology today holds that
+                        personality emerges early and continues to change in meaningful ways throughout the
+                        lifespan.
+                    </p>
+                    <p>Adult personality traits are believed to have a basis in infant temperament,
+                        meaning that individual differences in disposition and behavior appear early
+                        in life, possibly even before language or conscious self-representation develop.
+                        The Five Factor Model of personality has been found to map onto dimensions of
+                        childhood temperament,suggesting that individual differences in levels of
+                        the “big five” personality traits (neuroticism, extroversion, openness to experience,
+                        agreeableness, and conscientiousness) are present from young ages
+                    </p>
+                    <P>
+                        Personality is what makes a person unique. Personality development helps to develop an
+                        identity and leave a long lasting impression on others. The development of personality
+                        starts from the day a child is born. The earlier you start building your personality the better.
+                    </P>
+                    <p>
+                        If you observe different people respond to same situation in different ways. Some get angry,
+                        some become stressed while others remain calm. The situation is same, so what causes this
+                        different response? It is their attitude, way of thinking, knowledge and all in all their
+                        personality. Personality development includes your physical, mental and emotional development.
+                    </p>
+                    <p>
+                        Some of our personality traits are innate - we are born with them, others we develop as we
+                        grow from our family, friends, environment. If you want to develop your personality you should
+                        first know yourself. Identify your strengths and weakness. Work on improving your weakness and
+                        at the same time keep building your strengths.
+                    </P>
+                </div>
+            </div>
+        </div>
+</div>
+    <div>
+    <a class="bottom_links btn btn-default btn-xs" href="{% url 'pulak' %}" >Pulak Lakhani</a>
+    <a class="bottom_links btn btn-default btn-xs" href="{% url 'courses' %}"> Course Details</a>
+    <a href="#" class="bottom_links btn btn-default btn-xs" >Contact US</a>
+    </div>
+{% endblock %}

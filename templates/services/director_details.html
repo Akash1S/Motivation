@@ -1,0 +1,61 @@
+<title>Director Details Page</title>
+{% extends 'home.html' %}
+{% load staticfiles %}
+{% block links_data %}
+    <style>
+        .row{
+            {#margin-left: 100px;#}
+                }
+    #oo1{
+        height: 200px;
+        width: 200px;
+        margin-bottom: 20px;
+    }
+    p{
+        font-family: 'EB Garamond', serif;
+        font-size: 20px;
+    }
+    </style>
+    <div class="container">
+    <br><br><br><br><br>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <h4><b>Pulak Lakhani</b></h4>
+        </div>
+        <div class="col-md-5">
+            <img id="oo1" src="https://images.unsplash.com/photo-1517309246852-c500628fefad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+            <br><br>
+            <p>
+                Pulak Lakhani is one of top Motivational Speakers in India, with an experience of over 39 years.
+                Smart, Suave and Charismatic, TsMadaan is endowed with penetrative mind, amazing spontaneity
+                and clarity of thoughts. His sessions are designed to infuse tremendous dynamism and vigour
+                into the participants, to help them grow personally and professionally. His specialisation is
+                in Life Skills viz. Human Relations, Behaviour, Self Confidence, Positive Thinking, Emotions
+                (Anger, Grief, Sorrow, Fear, Frustration, Boredom etc.) Management, Stress Management, Time
+                Management, Leadership etc. and Selling Skills viz. Prospecting, Cold Calling, Need Analysis,
+                Follow ups, Customer Service, Closing Sales etc. The Contents are designed as per your needs,
+                interests, expectations and concerns. The results are noticeable immediately. The delivery
+                style is Interactive, Entertaining and Powerful.
+            </p>
+            <br><br>
+            <P>
+                His sessions are blend of funny, humorous, informative, educative training. He has his
+                clientele from FMCG, Pharmaceutical, Banking, Life Insurance, MLM, Direct Selling, Consumer
+                Durables, Retail, Real Estate, IT etc. He delivers his sessions in Hinglish, a blend of Hindi
+                and English as generally spoken in organisations. Keeping audience mesmerised for 3 hours,
+                more than a bollywood movie, is USP of TS Madaan.
+            </P>
+            <embed src="https://www.youtube.com/embed/F9Bo89m2f6g" allowfullscreen="true" width="425" height="344"><br>
+            <embed src="https://www.youtube.com/embed/_melegAnmkY" allowfullscreen="true" width="425" height="344"><br>
+            <embed src="https://www.youtube.com/embed/ZbfQ5q0SeYU" allowfullscreen="true" width="425" height="344"><br>
+            <embed src="https://www.youtube.com/embed/jNuKwlKJx2E" allowfullscreen="true" width="425" height="344"><br>
+            <embed src="https://www.youtube.com/embed/T1y3aIfZXJ8" allowfullscreen="true" width="425" height="344"><br>
+            <a href="{% url 'seminars_gallery' %}" class="btn btn-default btn-xs" >Videos</a>
+            <a href="{% url 'courses' %}" class="btn btn-default btn-xs"> Course Details</a>
+            <a href="{% url 'about_us' %}" class="btn btn-default btn-xs">Contact US</a>
+        </div>
+    </div>
+    </div>
+    <br>
+{% endblock %}

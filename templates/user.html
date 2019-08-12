@@ -1,0 +1,144 @@
+<title>Login Page -- User Login only</title>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block login_signup %}
+    <style>
+    .jumb{
+        background-image: url("{% static 'back4.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: "Californian FB";
+    }
+    form{
+        color:white;
+        font-size: 30px;
+    }
+    #select{
+        color: black;
+        font-family: "Californian FB";
+        font-size: 20px;
+    }
+</style>
+    {% if type == "Registration_Page" %}
+    <form method="post" name="contact_form" action="/home/">
+        {% csrf_token %}
+        <div class="container">
+            <div class="jumbotron jumb">
+                {{ reply }}
+                <div class="form-group">
+                    <label for="f_name"><b> Your First Name:</b></label>
+                    <input type="text" id="f_name" class="form-control" placeholder="Enter First Name" name="f_name">
+                </div>
+                <div class="form-group">
+                    <label for="f_name"><b> Your Last Name:</b></label>
+                    <input type="text" id="f_name" class="form-control" placeholder="Enter Last Name" name="l_name">
+                </div>
+                <div class="form-group">
+                    <label for="f_name"><b> Your Father Name:</b></label>
+                    <input type="text" id="f_name" class="form-control" placeholder="Enter Father Name"
+                           name="father_name">
+                </div>
+                {{ M_msg }}
+                <div class="form-group">
+                    <label for="mobile"><b>Mobile No:</b></label>
+                    <input type="number" class="form-control" id="mobile" placeholder="Enter Mobile:" required name="mobile">
+                </div>
+                {{ E_msg }}
+                <div class="form-group">
+                    <label for="email"><b>Email Id:</b></label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email id:" required
+                           name="email">
+                </div>
+                <div class="form-group">
+                    <label><b> Select Your State:</b></label>
+                    <select id="select" name="state">
+                        <option value="">Select State</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh" selected>Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quali"><b> Qualification:</b></label>
+                    <input type="text" class="form-control" id="quali" placeholder="Your Highest Qualification"
+                           name="qualification">
+                </div>
+                <div class="form-group">
+                    <label for="password"><b> Password:</b></label>
+                    <input type="password" class="form-control" id="password" placeholder="Create A new Password"
+                           name="password">
+                </div>
+                <div class="form-group">
+                    <input type="submit" onclick="submitForm()" class="btn btn-primary" value="Register">
+                </div>
+            </div>
+        </div>
+        <script>
+            function submitForm() {
+                document.contact_form.submit();
+                document.contact_form.reset();
+            }
+        </script>
+    </form>
+    {% else %}
+    <div class="container">
+        <div class="jumbotron jumb">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="mobile">Email Id:</label>
+                    <h3>{{ n_email }}</h3>
+                    <input type="email" class="form-control" id="mobile" placeholder="Registered Email id :" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password"> Password:</label>
+                    <h2>{{ n_password}}</h2>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                           name="password">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    <center>
+    <div class="form-group">
+        <p> If you aren't register before so first register </p>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+    </div>
+</center>
+    {% endif %}
+{% endblock %}

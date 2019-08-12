@@ -1,0 +1,101 @@
+<title>Contact Page--Pulak Lakhani </title>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block center_data %}
+    <style>
+        .row {
+            font-family: "Yu Gothic UI Semibold";
+
+        }
+
+        #img1 {
+            height: 300px;
+            width: 678px;
+            border-radius: 10px;
+        }
+
+        .form-control {
+            max-width: 500px;
+        }
+
+        .jumbotron {
+            margin-right: 460px;
+        }
+
+        .texta {
+            height: 300px;
+            max-height: 300px;
+        }
+
+        #img2 {
+            height: 300px;
+            width: 400px;
+        }
+
+        pre {
+            font-size: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        function messageCheck() {
+            var mess = document.getElementById('message');
+            if ((length(mess) > 50)) {
+                alert(length(mess)
+                mess.style.border = 'red solid 1px';
+                mess.style.background = 'black';
+                mess.style.color = "red";
+                return true
+            }
+            else{
+                alert(length(mess)
+                return false
+            }
+        }
+    </script>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <div class="container">
+                <img id="img1"
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnuhabjNhWr7j5PNYpp1d7-fu2mPBQyTSJGzhGpFnsXgycEOrFhQ">
+                <form class="jumbotron" method="post">
+                    {% csrf_token %}
+                    {% if type == "queried" %}
+                        <h4>{{ msg }}</h4>
+                    {% endif %}
+                    <h3>Send Your Enquiry</h3>
+                    <label class="form-group" for="name"> Name</label><br>
+                    <input id="name" type="text" class="form-control" name="name" required><br>
+                    <label class="form-group" for="email"> Email</label>
+                    <input id="email" type="email" class="form-control" name="email" required><br>
+                    <label class="form-group" for="mobile"> Mobile No</label>
+                    <input id="mobile" type="text" class="form-control" name="mobile" required><br>
+                    <label for="message" class="form-group">Your Message </label>
+                    <textarea name="message" id="message" class="form-control texta" required
+                              placeholder="Please Enter More Than 50 Charecters"></textarea><br><br><br>
+                    <center>
+                        <button type="submit" onclick="messageCheck()" class="bg-primary">Submit</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img id="img2"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKb_cT3OI4P6YmF6iPINinOSFZCp9iNbDScZoLhre5uHMnLAujBA"><br><br><br>
+            <h2>Contact Details</h2>
+            <pre>
+<span style="color: blue; font-size: 20px">Lakhani Institute</span>
+Sector FH- 304,
+Durga Complex ,
+navlakhha, Indore,
+Madhya Pradesh-
+    452 010(India)
+<b>Email:</b>
+    <span style="color: red;">hariibabu47@gmail.com
+    pulak2019@gmail.com</span>
+<b>MOB:</b> +91 - 9111990094
+<b>MOB:</b> +91 - 9111990094
+</pre>
+        </div>
+    </div>
+{% endblock %}
